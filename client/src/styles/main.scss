@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;600;700&display=swap");
+
+:root {
+    --button-width: 150px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-family: "Oswald", sans-serif;
+    color: #000000;
+    font-size: 30px;
+}
+
+header.header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background: #134b94;
+    color: #ffffff;
+    font-size: 0.8em;
+    padding-left: 30px;
+}
+
+.messanger-container {
+    height: 90%;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.messanger-container .messages-display {
+    height: 90%;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    overflow-y: auto;
+}
+
+.messanger-container .messages-display .message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.message-container .sender-name {
+    color: #00000071;
+    font-size: 0.5em;
+    font-style: italic;
+}
+
+.message-container .message {
+    border: none;
+    border-radius: 15px;
+    min-height: 50px;
+    max-width: 100%;
+    padding: 30px;
+    font-size: 0.8em;
+    color: #ffffff;
+}
+
+[sender="me"] {
+    align-self: flex-start;
+}
+
+[sender="me"] .sender-name {
+    align-self: flex-start;
+}
+
+[sender="me"] .message {
+    background-color: #134b94;
+}
+
+[sender="other"] {
+    align-self: flex-end;
+}
+
+[sender="other"] .sender-name {
+    align-self: flex-end;
+}
+
+[sender="other"] .message {
+    background-color: green;
+}
+
+.messanger-container .messages-input {
+    margin: 0;
+    padding: 5px;
+    height: 10%;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #00000025;
+}
+.messanger-container .messages-input input {
+    margin: 0;
+    height: 50px;
+    width: calc(100vw - var(--button-width));
+    font-size: 0.9em;
+}
+
+.messanger-container .messages-input button {
+    margin: 0;
+    width: var(--button-width);
+    height: 50px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+@media (max-width: 670px) {
+    header.header {
+        font-size: 0.5em;
+    }
+    :root {
+        --button-width: 100px;
+    }
+}
