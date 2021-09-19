@@ -7,6 +7,8 @@ services:
       context: ./client
       dockerfile: Dockerfile
     container_name: game-client
+    environment:
+      - GAME_SOCKETIO_API=http://localhost:500 
     ports:
       - 80:80
     depends_on: 
